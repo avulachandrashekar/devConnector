@@ -19,7 +19,7 @@ const userSchema = new schema({
     },
     date : {
         type : Date,
-        require : Date.now
+        default : Date.now
     }
 })
 

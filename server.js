@@ -9,11 +9,12 @@ const profiles = require('./routes/api/profiles');
 
 const db = require('./Config/keys').mongoURI;
 
+const app = express();
+
 app.use(bodyparser.urlencoded({extended : false}))
 app.use(bodyparser.json())
 
-const app = express();
-
+//Connect to mongo
 mongoose.connect(db)
         .then(() => console.log('MongoDB connected.'))
         .catch(err => console.log(err))
